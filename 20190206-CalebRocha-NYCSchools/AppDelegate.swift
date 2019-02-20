@@ -13,10 +13,31 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let barButtonAppearance = UIBarButtonItem.appearance()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
+        // launching the table view first. It's a navigation controller
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "BasicSchoolViewController")
+        
+        let navController = UINavigationController()
+        navController.viewControllers = [initialViewController]
+        
+        self.window?.rootViewController = navController
+        self.window?.makeKeyAndVisible()
+        
+        // creating a custom back button for the navigation bar
+        // it has a specified image and no text
+        let backImage = UIImage(named: "close")?.withRenderingMode(.alwaysOriginal)
+        
+        UINavigationBar.appearance().backIndicatorImage = backImage
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backImage
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 0, vertical: 0), for: .default)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
+        
         return true
     }
 
