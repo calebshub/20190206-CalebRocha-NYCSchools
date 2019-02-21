@@ -7,6 +7,18 @@ Caleb Rocha
 
 Thank you for viewing this project!
 
+I have yet to create a working build that doesn't require cocoapods.
+
+So to build and run project:
+
+1) open the terminal and cd into the folder where you saved the project 
+
+2) cd into 20190206-CalebRocha-NYCSchools
+
+3) terminal comand: pod install
+
+4) double click the .xcworkspace file that is created - 20190206-CalebRocha-NYCSchools.xcworkspace
+
 ************ A FEW THINGS TO NOTE ************
 
 I have used Objective-C in all my previous iOS projects. This was my first ever venture into Swift programming and I really enjoyed it. That being said, I am positive my Swift programming could use improvement.
