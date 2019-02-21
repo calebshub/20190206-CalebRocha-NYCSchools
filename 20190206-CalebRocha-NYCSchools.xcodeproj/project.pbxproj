@@ -18,9 +18,9 @@
 		35A1E427220BC91F00ECF3C9 /* _0190206_CalebRocha_NYCSchoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A1E426220BC91F00ECF3C9 /* _0190206_CalebRocha_NYCSchoolsTests.swift */; };
 		35A1E432220BC91F00ECF3C9 /* _0190206_CalebRocha_NYCSchoolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A1E431220BC91F00ECF3C9 /* _0190206_CalebRocha_NYCSchoolsUITests.swift */; };
 		35B55AB2221CA5E2000400B1 /* SingleWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B55AB1221CA5E2000400B1 /* SingleWebViewController.swift */; };
-		A72B1E05E725174F44B03310 /* Pods_20190206_CalebRocha_NYCSchoolsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4A781571D6F20A611F78C1 /* Pods_20190206_CalebRocha_NYCSchoolsUITests.framework */; };
-		B3445F874BC2801FBC87D7AB /* Pods_20190206_CalebRocha_NYCSchoolsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F170301B0F6BFD1FE66FA41D /* Pods_20190206_CalebRocha_NYCSchoolsTests.framework */; };
-		F78D0701E62465CA39B23DE7 /* Pods_20190206_CalebRocha_NYCSchools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137DEE2ABA5E34EB10056EA1 /* Pods_20190206_CalebRocha_NYCSchools.framework */; };
+		6AF79C372B71976CABEE9DAA /* Pods_20190206_CalebRocha_NYCSchoolsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BB9A31B1B91C55E21CEBEB /* Pods_20190206_CalebRocha_NYCSchoolsTests.framework */; };
+		AE03ED782825DD14BE44A4CD /* Pods_20190206_CalebRocha_NYCSchools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879DF884CD2620477C333D9D /* Pods_20190206_CalebRocha_NYCSchools.framework */; };
+		EA9964788AEA3D67709BCEDF /* Pods_20190206_CalebRocha_NYCSchoolsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76026004AC22057E9B57F14B /* Pods_20190206_CalebRocha_NYCSchoolsUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		137DEE2ABA5E34EB10056EA1 /* Pods_20190206_CalebRocha_NYCSchools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20190206_CalebRocha_NYCSchools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		355F4294221B24C2006F129F /* BasicSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSchoolViewController.swift; sourceTree = "<group>"; };
 		355F4296221B24D4006F129F /* DetailedSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSchoolViewController.swift; sourceTree = "<group>"; };
 		355F4298221B2545006F129F /* BasicSchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSchool.swift; sourceTree = "<group>"; };
@@ -59,14 +58,15 @@
 		35A1E431220BC91F00ECF3C9 /* _0190206_CalebRocha_NYCSchoolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0190206_CalebRocha_NYCSchoolsUITests.swift; sourceTree = "<group>"; };
 		35A1E433220BC91F00ECF3C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35B55AB1221CA5E2000400B1 /* SingleWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleWebViewController.swift; sourceTree = "<group>"; };
-		373C46EFC09A0B8CB553A142 /* Pods-20190206-CalebRocha-NYCSchoolsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20190206-CalebRocha-NYCSchoolsUITests.debug.xcconfig"; path = "Target Support Files/Pods-20190206-CalebRocha-NYCSchoolsUITests/Pods-20190206-CalebRocha-NYCSchoolsUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		38CB4755EAA2FDE4431078F9 /* Pods-20190206-CalebRocha-NYCSchools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20190206-CalebRocha-NYCSchools.release.xcconfig"; path = "Target Support Files/Pods-20190206-CalebRocha-NYCSchools/Pods-20190206-CalebRocha-NYCSchools.release.xcconfig"; sourceTree = "<group>"; };
-		61319F505AC0EE901BE8174C /* Pods-20190206-CalebRocha-NYCSchoolsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20190206-CalebRocha-NYCSchoolsUITests.release.xcconfig"; path = "Target Support Files/Pods-20190206-CalebRocha-NYCSchoolsUITests/Pods-20190206-CalebRocha-NYCSchoolsUITests.release.xcconfig"; sourceTree = "<group>"; };
-		88B64A8419E7A5690DBA350D /* Pods-20190206-CalebRocha-NYCSchools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20190206-CalebRocha-NYCSchools.debug.xcconfig"; path = "Target Support Files/Pods-20190206-CalebRocha-NYCSchools/Pods-20190206-CalebRocha-NYCSchools.debug.xcconfig"; sourceTree = "<group>"; };
-		93750B1697C718F338E1A8E1 /* Pods-20190206-CalebRocha-NYCSchoolsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20190206-CalebRocha-NYCSchoolsTests.release.xcconfig"; path = "Target Support Files/Pods-20190206-CalebRocha-NYCSchoolsTests/Pods-20190206-CalebRocha-NYCSchoolsTests.release.xcconfig"; sourceTree = "<group>"; };
-		A53F8260820C8CD4A71309F6 /* Pods-20190206-CalebRocha-NYCSchoolsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20190206-CalebRocha-NYCSchoolsTests.debug.xcconfig"; path = "Target Support Files/Pods-20190206-CalebRocha-NYCSchoolsTests/Pods-20190206-CalebRocha-NYCSchoolsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DD4A781571D6F20A611F78C1 /* Pods_20190206_CalebRocha_NYCSchoolsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20190206_CalebRocha_NYCSchoolsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F170301B0F6BFD1FE66FA41D /* Pods_20190206_CalebRocha_NYCSchoolsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20190206_CalebRocha_NYCSchoolsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A8571407218BCFEDA7E2A87 /* Pods-20190206-CalebRocha-NYCSchoolsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20190206-CalebRocha-NYCSchoolsTests.release.xcconfig"; path = "Target Support Files/Pods-20190206-CalebRocha-NYCSchoolsTests/Pods-20190206-CalebRocha-NYCSchoolsTests.release.xcconfig"; sourceTree = "<group>"; };
+		50A03F54DD6F5F35E5ED9050 /* Pods-20190206-CalebRocha-NYCSchoolsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20190206-CalebRocha-NYCSchoolsUITests.debug.xcconfig"; path = "Target Support Files/Pods-20190206-CalebRocha-NYCSchoolsUITests/Pods-20190206-CalebRocha-NYCSchoolsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		75BB9A31B1B91C55E21CEBEB /* Pods_20190206_CalebRocha_NYCSchoolsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20190206_CalebRocha_NYCSchoolsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76026004AC22057E9B57F14B /* Pods_20190206_CalebRocha_NYCSchoolsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20190206_CalebRocha_NYCSchoolsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		879DF884CD2620477C333D9D /* Pods_20190206_CalebRocha_NYCSchools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20190206_CalebRocha_NYCSchools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5F5BA207F48B58FCF68AEED /* Pods-20190206-CalebRocha-NYCSchoolsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20190206-CalebRocha-NYCSchoolsUITests.release.xcconfig"; path = "Target Support Files/Pods-20190206-CalebRocha-NYCSchoolsUITests/Pods-20190206-CalebRocha-NYCSchoolsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AD6B4B91138D449BC67CA133 /* Pods-20190206-CalebRocha-NYCSchools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20190206-CalebRocha-NYCSchools.release.xcconfig"; path = "Target Support Files/Pods-20190206-CalebRocha-NYCSchools/Pods-20190206-CalebRocha-NYCSchools.release.xcconfig"; sourceTree = "<group>"; };
+		AEA99F9DDCB002F6EB383E38 /* Pods-20190206-CalebRocha-NYCSchoolsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20190206-CalebRocha-NYCSchoolsTests.debug.xcconfig"; path = "Target Support Files/Pods-20190206-CalebRocha-NYCSchoolsTests/Pods-20190206-CalebRocha-NYCSchoolsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D45EDEAE9E40AB5CA920CE70 /* Pods-20190206-CalebRocha-NYCSchools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20190206-CalebRocha-NYCSchools.debug.xcconfig"; path = "Target Support Files/Pods-20190206-CalebRocha-NYCSchools/Pods-20190206-CalebRocha-NYCSchools.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F78D0701E62465CA39B23DE7 /* Pods_20190206_CalebRocha_NYCSchools.framework in Frameworks */,
+				AE03ED782825DD14BE44A4CD /* Pods_20190206_CalebRocha_NYCSchools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3445F874BC2801FBC87D7AB /* Pods_20190206_CalebRocha_NYCSchoolsTests.framework in Frameworks */,
+				6AF79C372B71976CABEE9DAA /* Pods_20190206_CalebRocha_NYCSchoolsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A72B1E05E725174F44B03310 /* Pods_20190206_CalebRocha_NYCSchoolsUITests.framework in Frameworks */,
+				EA9964788AEA3D67709BCEDF /* Pods_20190206_CalebRocha_NYCSchoolsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,8 +122,8 @@
 				35A1E425220BC91F00ECF3C9 /* 20190206-CalebRocha-NYCSchoolsTests */,
 				35A1E430220BC91F00ECF3C9 /* 20190206-CalebRocha-NYCSchoolsUITests */,
 				35A1E40C220BC91800ECF3C9 /* Products */,
-				FE3168736304E6A019786B87 /* Pods */,
-				9154A343B6151509B56B1AD3 /* Frameworks */,
+				DA31CF8888E21865F725478B /* Pods */,
+				E855B10D8DBAAFC03EB45A93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,28 +170,28 @@
 			path = "20190206-CalebRocha-NYCSchoolsUITests";
 			sourceTree = "<group>";
 		};
-		9154A343B6151509B56B1AD3 /* Frameworks */ = {
+		DA31CF8888E21865F725478B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				137DEE2ABA5E34EB10056EA1 /* Pods_20190206_CalebRocha_NYCSchools.framework */,
-				F170301B0F6BFD1FE66FA41D /* Pods_20190206_CalebRocha_NYCSchoolsTests.framework */,
-				DD4A781571D6F20A611F78C1 /* Pods_20190206_CalebRocha_NYCSchoolsUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FE3168736304E6A019786B87 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				88B64A8419E7A5690DBA350D /* Pods-20190206-CalebRocha-NYCSchools.debug.xcconfig */,
-				38CB4755EAA2FDE4431078F9 /* Pods-20190206-CalebRocha-NYCSchools.release.xcconfig */,
-				A53F8260820C8CD4A71309F6 /* Pods-20190206-CalebRocha-NYCSchoolsTests.debug.xcconfig */,
-				93750B1697C718F338E1A8E1 /* Pods-20190206-CalebRocha-NYCSchoolsTests.release.xcconfig */,
-				373C46EFC09A0B8CB553A142 /* Pods-20190206-CalebRocha-NYCSchoolsUITests.debug.xcconfig */,
-				61319F505AC0EE901BE8174C /* Pods-20190206-CalebRocha-NYCSchoolsUITests.release.xcconfig */,
+				D45EDEAE9E40AB5CA920CE70 /* Pods-20190206-CalebRocha-NYCSchools.debug.xcconfig */,
+				AD6B4B91138D449BC67CA133 /* Pods-20190206-CalebRocha-NYCSchools.release.xcconfig */,
+				AEA99F9DDCB002F6EB383E38 /* Pods-20190206-CalebRocha-NYCSchoolsTests.debug.xcconfig */,
+				3A8571407218BCFEDA7E2A87 /* Pods-20190206-CalebRocha-NYCSchoolsTests.release.xcconfig */,
+				50A03F54DD6F5F35E5ED9050 /* Pods-20190206-CalebRocha-NYCSchoolsUITests.debug.xcconfig */,
+				A5F5BA207F48B58FCF68AEED /* Pods-20190206-CalebRocha-NYCSchoolsUITests.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E855B10D8DBAAFC03EB45A93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				879DF884CD2620477C333D9D /* Pods_20190206_CalebRocha_NYCSchools.framework */,
+				75BB9A31B1B91C55E21CEBEB /* Pods_20190206_CalebRocha_NYCSchoolsTests.framework */,
+				76026004AC22057E9B57F14B /* Pods_20190206_CalebRocha_NYCSchoolsUITests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,11 +201,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35A1E436220BC91F00ECF3C9 /* Build configuration list for PBXNativeTarget "20190206-CalebRocha-NYCSchools" */;
 			buildPhases = (
-				9D629BFD6E4094F861888CD0 /* [CP] Check Pods Manifest.lock */,
+				A3B6347D4EF165AECFBFE395 /* [CP] Check Pods Manifest.lock */,
 				35A1E407220BC91800ECF3C9 /* Sources */,
 				35A1E408220BC91800ECF3C9 /* Frameworks */,
 				35A1E409220BC91800ECF3C9 /* Resources */,
-				7299AC327B45EA4117E1EC2D /* [CP] Embed Pods Frameworks */,
+				8FFE3DD71EAFCF2F662F588E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,7 +220,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35A1E439220BC91F00ECF3C9 /* Build configuration list for PBXNativeTarget "20190206-CalebRocha-NYCSchoolsTests" */;
 			buildPhases = (
-				AB0751AD066730AA073260F5 /* [CP] Check Pods Manifest.lock */,
+				81AB04E6B72D550304541F15 /* [CP] Check Pods Manifest.lock */,
 				35A1E41E220BC91F00ECF3C9 /* Sources */,
 				35A1E41F220BC91F00ECF3C9 /* Frameworks */,
 				35A1E420220BC91F00ECF3C9 /* Resources */,
@@ -239,7 +239,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35A1E43C220BC91F00ECF3C9 /* Build configuration list for PBXNativeTarget "20190206-CalebRocha-NYCSchoolsUITests" */;
 			buildPhases = (
-				CBD5D4D941AC5910430D945A /* [CP] Check Pods Manifest.lock */,
+				FB6CD97481E309F63D3E165D /* [CP] Check Pods Manifest.lock */,
 				35A1E429220BC91F00ECF3C9 /* Sources */,
 				35A1E42A220BC91F00ECF3C9 /* Frameworks */,
 				35A1E42B220BC91F00ECF3C9 /* Resources */,
@@ -325,7 +325,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7299AC327B45EA4117E1EC2D /* [CP] Embed Pods Frameworks */ = {
+		81AB04E6B72D550304541F15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-20190206-CalebRocha-NYCSchoolsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FFE3DD71EAFCF2F662F588E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -349,7 +371,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-20190206-CalebRocha-NYCSchools/Pods-20190206-CalebRocha-NYCSchools-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9D629BFD6E4094F861888CD0 /* [CP] Check Pods Manifest.lock */ = {
+		A3B6347D4EF165AECFBFE395 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -371,29 +393,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AB0751AD066730AA073260F5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-20190206-CalebRocha-NYCSchoolsTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CBD5D4D941AC5910430D945A /* [CP] Check Pods Manifest.lock */ = {
+		FB6CD97481E309F63D3E165D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -600,7 +600,7 @@
 		};
 		35A1E437220BC91F00ECF3C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88B64A8419E7A5690DBA350D /* Pods-20190206-CalebRocha-NYCSchools.debug.xcconfig */;
+			baseConfigurationReference = D45EDEAE9E40AB5CA920CE70 /* Pods-20190206-CalebRocha-NYCSchools.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -618,7 +618,7 @@
 		};
 		35A1E438220BC91F00ECF3C9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38CB4755EAA2FDE4431078F9 /* Pods-20190206-CalebRocha-NYCSchools.release.xcconfig */;
+			baseConfigurationReference = AD6B4B91138D449BC67CA133 /* Pods-20190206-CalebRocha-NYCSchools.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -636,7 +636,7 @@
 		};
 		35A1E43A220BC91F00ECF3C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A53F8260820C8CD4A71309F6 /* Pods-20190206-CalebRocha-NYCSchoolsTests.debug.xcconfig */;
+			baseConfigurationReference = AEA99F9DDCB002F6EB383E38 /* Pods-20190206-CalebRocha-NYCSchoolsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -657,7 +657,7 @@
 		};
 		35A1E43B220BC91F00ECF3C9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93750B1697C718F338E1A8E1 /* Pods-20190206-CalebRocha-NYCSchoolsTests.release.xcconfig */;
+			baseConfigurationReference = 3A8571407218BCFEDA7E2A87 /* Pods-20190206-CalebRocha-NYCSchoolsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -678,7 +678,7 @@
 		};
 		35A1E43D220BC91F00ECF3C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 373C46EFC09A0B8CB553A142 /* Pods-20190206-CalebRocha-NYCSchoolsUITests.debug.xcconfig */;
+			baseConfigurationReference = 50A03F54DD6F5F35E5ED9050 /* Pods-20190206-CalebRocha-NYCSchoolsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -698,7 +698,7 @@
 		};
 		35A1E43E220BC91F00ECF3C9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61319F505AC0EE901BE8174C /* Pods-20190206-CalebRocha-NYCSchoolsUITests.release.xcconfig */;
+			baseConfigurationReference = A5F5BA207F48B58FCF68AEED /* Pods-20190206-CalebRocha-NYCSchoolsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

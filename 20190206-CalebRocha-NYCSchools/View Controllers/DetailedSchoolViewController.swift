@@ -285,7 +285,7 @@ class DetailedSchoolViewController: UIViewController {
         let url = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json?\(schoolIDParam)"
         print("sat-url: \(url)");
         
-        Alamofire.request(url, parameters: nil, headers: nil)
+        AF.request(url, parameters: nil, headers: nil)
             .responseJSON { response in
                 guard response.result.isSuccess,
                     let value = response.result.value else {
