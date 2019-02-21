@@ -25,6 +25,8 @@ I have used Objective-C in all my previous iOS projects. This was my first ever 
 
 I used StoryBoard and auto layout, but if I was working on a larger project I would have used XIBs or programmatically created and adjusted the views. This would allow for better control and manipulation of the views.
 
+I didn't use an app-token so the api requests for the app are limited.
+
 I do not think this app will be made public, but if so, below are the attributes required for using the icons. They were all downloaded from www.flaticon.com.
 
 Icon Attributions:
@@ -101,7 +103,7 @@ What is Important:
 
 What is Less Important:
 
-	a)Demonstrating technologies or techniques you are not already familiar with.
+	a) Demonstrating technologies or techniques you are not already familiar with.
 
 Bonus Points!
 
