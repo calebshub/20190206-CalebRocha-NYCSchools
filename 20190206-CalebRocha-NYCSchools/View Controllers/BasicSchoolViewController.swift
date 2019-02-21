@@ -115,7 +115,7 @@ class BasicSchoolViewController: UIViewController, UITableViewDelegate, UITableV
         // with the swift version of AFNetworking (which I have used in objective-c projects)
         
         // check the response was a success and pass the resulting value to a const "value"
-        AF.request(url, parameters: nil, headers: nil)
+        Alamofire.request(url, parameters: nil, headers: nil)
             .responseJSON { response in
                 guard response.result.isSuccess,
                     let value = response.result.value else {
