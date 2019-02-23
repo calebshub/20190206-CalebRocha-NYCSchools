@@ -8,8 +8,6 @@
 
 import Foundation
 import UIKit
-import Alamofire
-import SwiftyJSON
 import MapKit
 
 class DetailedSchoolViewController: UIViewController {
@@ -241,6 +239,7 @@ class DetailedSchoolViewController: UIViewController {
                 let fillWidth = (scoreNumber/maxScore) * maxBarWidth
                 
                 // animate the constraint change
+                scoreBar.layoutIfNeeded()
                 constraint.constant = CGFloat(fillWidth)
                 UIView.animate(withDuration: 1.75) {
                     scoreBar.layoutIfNeeded()
@@ -282,30 +281,51 @@ class DetailedSchoolViewController: UIViewController {
         
         // fetch the SAT data, specifying a school using the id or "dbn"
         let schoolIDParam = "dbn=\(school.id)"
-        let url = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json?\(schoolIDParam)"
-        print("sat-url: \(url)");
+        let stringURL = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json?\(schoolIDParam)"
+        print("sat-url: \(stringURL)");
+        let myURL = URL(string:stringURL)
+        let request = URLRequest(url:myURL!)
         
-        Alamofire.request(url, parameters: nil, headers: nil)
-            .responseJSON { response in
-                guard response.result.isSuccess,
-                    let value = response.result.value else {
-                        print("Error while fetching SAT school data: \(String(describing: response.result.error))")
-                        DispatchQueue.main.async {
-                            // SAT data error
-                            self.showSATError(errorMsg: nil)
-                        }
-                        return
+        // Create a session that we can use for this request
+        let session = URLSession(configuration: .default)
+        
+        // Create a task that will be responsible for downloading the school data
+        let task = session.dataTask(with: request) { (data, response, error) in
+            
+            // stop the loading indicator
+            DispatchQueue.main.async {
+                self.satLoadingIndicator.stopAnimating()
+            }
+            
+            guard let dataResponse = data, error == nil else {
+                
+                print(error?.localizedDescription ?? "Response Error")
+                DispatchQueue.main.async {
+                    self.showSATError(errorMsg: nil)
                 }
                 
-                print("raw json value: \(value)");
+                return
+            }
+            do {
                 
-                self.satLoadingIndicator.stopAnimating()
+                // dataResponse received from a network request
+                let jsonResponse = try JSONSerialization.jsonObject(with:
+                    dataResponse, options: [])
                 
-                if let jsonSAT = JSON(value).array?.first {
-                   
-                    // set the SAT data for the school
-                    self.initialSchool?.setSATDataWithJson(json: jsonSAT)
+                // convert jsonRespnse to an array of dictionaries (it's an array of one)
+                guard let jsonArray = jsonResponse as? [[String: Any]] else {
+                    DispatchQueue.main.async {
+                        self.showSATError(errorMsg:nil)
+                    }
+                    return
+                }
+                
+                if let jsonSATDict = jsonArray.first {
                     
+                    // set the SAT data for the school
+                    self.initialSchool?.setSATDataWithJson(json: jsonSATDict)
+                    
+                    // update the SAT views
                     if let satData : BasicSchool.SATData = self.initialSchool?.sat_data {
                         DispatchQueue.main.async {
                             if (!self.didSetSATViews) {
@@ -315,13 +335,21 @@ class DetailedSchoolViewController: UIViewController {
                     }
                     
                 } else {
-                    // there was an empty array returned
-                    // when fetching this school's SAT data!
-                    self.showSATError(errorMsg: "School has no SAT data posted")
+                    DispatchQueue.main.async {
+                        self.showSATError(errorMsg: "School has no SAT data posted")
+                    }
                 }
+                
+            } catch let parsingError {
+                DispatchQueue.main.async {
+                    self.showSATError(errorMsg: nil)
+                }
+                print("Error", parsingError)
+            }
         }
+        task.resume()
     }
-    
+ 
     /*
      normally, this func would have an enum argument which
     could dictate how the views and messages are presented

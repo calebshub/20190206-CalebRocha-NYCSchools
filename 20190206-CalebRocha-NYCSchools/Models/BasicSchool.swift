@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 class BasicSchool {
     
@@ -40,34 +39,40 @@ class BasicSchool {
     
     var sat_data : SATData?
     
-    init(json : JSON) {
+    init(json : [String:Any]) {
         
         // Basic info
-        name            = json["school_name"].stringValue
-        dbn             = json["dbn"].stringValue
-        id              = json["dbn"].stringValue
-        finalgrades     = getGradeLevel(fromFinalGrades:json["finalgrades"].stringValue)
-        location        = json["location"].stringValue
-        latitude        = json["latitude"].stringValue
-        longitude       = json["longitude"].stringValue
+        name            = json["school_name"] as? String ?? ""
+        dbn             = json["dbn"] as? String ?? ""
+        id              = json["dbn"] as? String ?? ""
+        finalgrades     = getGradeLevel(fromFinalGrades:json["finalgrades"] as? String)
+        location        = json["location"] as? String
+        latitude        = json["latitude"] as? String
+        longitude       = json["longitude"] as? String
         address         = getAddress(fromLocation: location)
-        total_students  = json["total_students"].intValue
+        // check, because total_students value is being serialized into a String
+        if let studentCount = json["total_students"] as? Int  {
+            total_students  = studentCount
+        } else if let studentCountString = json["total_students"] as? String {
+            total_students = Int(studentCountString)
+        }
         
         // Additional school data
-        overview_description        = json["overview_paragraph"].stringValue
-        phone_number                = json["phone_number"].stringValue
-        email                       = json["school_email"].stringValue
-        website                     = json["website"].stringValue
-        extracurricular_activities  = json["extracurricular_activities"].stringValue
+        overview_description        = json["overview_paragraph"] as? String
+        phone_number                = json["phone_number"] as? String
+        email                       = json["school_email"] as? String
+        website                     = json["website"] as? String
+        extracurricular_activities  = json["extracurricular_activities"] as? String
         academic_opportunities      = getAcademicOpportunities(fromJson: json)
     }
     
-    func setSATDataWithJson (json : JSON) {
+    //func setSATDataWithJson (json : JSON) {
+    func setSATDataWithJson (json : [String:Any]) {
         sat_data = SATData()
-        sat_data?.num_test_takers = json["num_of_sat_test_takers"].stringValue
-        sat_data?.math_score =      json["sat_math_avg_score"].stringValue
-        sat_data?.reading_score =   json["sat_critical_reading_avg_score"].stringValue
-        sat_data?.writing_score =   json["sat_writing_avg_score"].stringValue
+        sat_data?.num_test_takers = json["num_of_sat_test_takers"] as? String
+        sat_data?.math_score =      json["sat_math_avg_score"] as? String
+        sat_data?.reading_score =   json["sat_critical_reading_avg_score"] as? String
+        sat_data?.writing_score =   json["sat_writing_avg_score"] as? String
     }
 }
 
@@ -105,7 +110,7 @@ func getAddress (fromLocation location : String?) -> String? {
 // The function searches the json for a match for a created indexed key and stops when there are
 // no more matches.
 
-func getAcademicOpportunities (fromJson json : JSON) -> [String]? {
+func getAcademicOpportunities (fromJson json : [String:Any]) -> [String]? {
     
     // create the key for the first index
     let baseKey = "academicopportunities"
@@ -117,13 +122,13 @@ func getAcademicOpportunities (fromJson json : JSON) -> [String]? {
     // if so add it the array and incriment the index
     
     var academicOpportunity : String?
-    academicOpportunity = json[academicOpportunityKey].stringValue
+    academicOpportunity = json[academicOpportunityKey] as? String
     
     while (academicOpportunity != nil && !academicOpportunity!.isEmpty) {
         opportunityArray.append(academicOpportunity!)
         currentIndex += 1
         academicOpportunityKey = baseKey + String(currentIndex)
-        academicOpportunity = json[academicOpportunityKey].stringValue
+        academicOpportunity = json[academicOpportunityKey] as? String
     }
     
     return opportunityArray

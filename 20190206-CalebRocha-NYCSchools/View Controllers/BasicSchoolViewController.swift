@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Alamofire
-import SwiftyJSON
 import UIKit
 
 // I would probably put this custom cell in its own file so it can easily be reused
@@ -52,6 +50,7 @@ class BasicSchoolViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - Properties
     @IBOutlet weak var schoolTableView: UITableView!
     
+    var schoolsLoadingIndicator : UIActivityIndicatorView!
     var schoolData: [BasicSchool] = []
     var isSchoolDataBeingFetched = false;
     
@@ -60,11 +59,21 @@ class BasicSchoolViewController: UIViewController, UITableViewDelegate, UITableV
         
         super.viewDidLoad()
         
+        // create the loading indicator and add it to the main view
+        schoolsLoadingIndicator = UIActivityIndicatorView(style: .gray)
+        schoolsLoadingIndicator.hidesWhenStopped = true;
+        schoolsLoadingIndicator.startAnimating()
+        schoolsLoadingIndicator.layer.zPosition = 1
+        let size : CGFloat = 32.0
+        schoolsLoadingIndicator.frame = CGRect(x: self.screenWidth/2 - size/2,
+                                               y: self.screenHeight/2 - size/2,
+                                               width: size,
+                                               height: size)
+        self.view.insertSubview(schoolsLoadingIndicator, at: 0)
+        self.view.bringSubviewToFront(schoolsLoadingIndicator)
+        
         schoolTableView.dataSource = self
         schoolTableView.delegate = self
-        
-        // remove tableview lines
-        //schoolTableView.separatorStyle = .none
         
         // letting the cells grow to fit the whole school name and address
         schoolTableView.rowHeight = UITableView.automaticDimension
@@ -90,6 +99,16 @@ class BasicSchoolViewController: UIViewController, UITableViewDelegate, UITableV
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    // Screen width.
+    public var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    
+    // Screen height.
+    public var screenHeight: CGFloat {
+        return UIScreen.main.bounds.height
+    }
+    
     // normally, I'd put this network code in another class and pass a closure
     // to return the school data and reload the tableivew.
     // I would also not hardcode the url or query strings.
@@ -101,37 +120,42 @@ class BasicSchoolViewController: UIViewController, UITableViewDelegate, UITableV
             return
         }
         
-        isSchoolDataBeingFetched = true;
-        
         // construct the url, adding query strings
         // limiting results to 12 schools at a time, offset and ordering allows for "paging" through results.
         // when the user has scrolled to the bottom of the list, we fetch the next 12 schools after the offset
         let limitParam = "$limit=12"
         let offsetParam = "$offset=\(self.schoolData.count)"
         let orderParam = "$order=:id"
-        let url = "https://data.cityofnewyork.us/resource/97mf-9njv.json?\(limitParam)&\(offsetParam)&\(orderParam)"
+        let stringURL = "https://data.cityofnewyork.us/resource/97mf-9njv.json?\(limitParam)&\(offsetParam)&\(orderParam)"
+        let myURL = URL(string:stringURL)
+        let request = URLRequest(url:myURL!)
         
-        // I could have just used an NSURLSession, but I wanted to familiarize myself
-        // with the swift version of AFNetworking (which I have used in objective-c projects)
+        // Create a session that we can use for this request
+        let session = URLSession(configuration: .default)
         
-        // check the response was a success and pass the resulting value to a const "value"
-        Alamofire.request(url, parameters: nil, headers: nil)
-            .responseJSON { response in
-                guard response.result.isSuccess,
-                    let value = response.result.value else {
-                        print("Error while fetching school data: \(String(describing: response.result.error))")
-                        DispatchQueue.main.async {
-                            self.schoolTableView.reloadData()
-                            self.isSchoolDataBeingFetched = false
-                        }
-                        return
-                }
-             
-                // uncomment to print raw json value
-                //print("raw value: \(value)");
+        // Create a task that will be responsible for downloading the school data
+        let task = session.dataTask(with: request) { (data, response, error) in
+            
+            DispatchQueue.main.async {
+                self.schoolsLoadingIndicator.stopAnimating()
+            }
+            
+            guard let dataResponse = data, error == nil else {
+                print(error?.localizedDescription ?? "Response Error")
+                return
+            }
+            do {
+                // dataResponse received from a network request
+                let jsonResponse = try JSONSerialization.jsonObject(with:
+                    dataResponse, options: [])
                 
-                // map the each array item (school json) into a Basic school object and add it an array
-                let nyc_schools : [BasicSchool]? = JSON(value).array?.map { school_json in
+                // convert jsonRespnse to an array of dictionaries
+                guard let jsonArray = jsonResponse as? [[String: Any]] else {
+                    return
+                }
+
+                // map the each array item (school json dict) into a Basic school object and add it an array
+                let nyc_schools : [BasicSchool]? = jsonArray.map { school_json in
                     BasicSchool(json: school_json)
                 }
                 
@@ -145,8 +169,14 @@ class BasicSchoolViewController: UIViewController, UITableViewDelegate, UITableV
                     self.schoolTableView.reloadData()
                     self.isSchoolDataBeingFetched = false
                 }
+                
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
         }
+        task.resume()
     }
+        
     
     // MARK: - TableView delegate functions
 
